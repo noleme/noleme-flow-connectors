@@ -1,0 +1,8 @@
+services:
+    df.properties_loader:
+        class: "com.noleme.flow.connect.tablesaw.dataframe.configuration.loader.file.TablePropertiesFlexibleLoader"
+        constructor:
+            - "@df.properties_loader.json"
+
+    df.properties_loader.json:
+        class: "com.noleme.flow.connect.tablesaw.dataframe.configuration.loader.iostream.TablePropertiesJSONStreamLoader"

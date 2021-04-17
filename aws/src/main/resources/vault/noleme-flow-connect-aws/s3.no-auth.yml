@@ -1,0 +1,14 @@
+variables:
+    s3.properties.region: "eu-west-3"
+
+services:
+    s3:
+        class: "com.noleme.flow.connect.aws.S3"
+        method: "buildS3"
+        arguments:
+            - "@s3.properties"
+
+    s3.properties:
+        class: "java.util.Properties"
+        invocations:
+            - ["put", "region", "##s3.properties.region##"]

@@ -1,0 +1,9 @@
+variables:
+    s3.conf_path: "conf/s3.properties"
+
+services:
+    s3:
+        class: "com.noleme.flow.connect.aws.S3"
+        method: "buildS3"
+        arguments:
+            - "##s3.conf_path##"

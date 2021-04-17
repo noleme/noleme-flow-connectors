@@ -1,0 +1,39 @@
+{
+    "name": "Test dataset",
+    "separator": ",",
+    "has_header": true,
+    "column_count": 4,
+    "charset": "utf-8",
+    "columns": [
+        {
+            "index": 0,
+            "type": "LONG",
+            "name": "column_a",
+            "comment": "Column A"
+        },
+        {
+            "index": 1,
+            "type": "LONG",
+            "name": "column_b",
+            "comment": "Column B"
+        },
+        {
+            "index": 2,
+            "type": "STRING",
+            "name": "column_c",
+            "comment": "Column C"
+        },
+        {
+            "index": 3,
+            "type": "SKIP",
+            "name": "column_d",
+            "comment": "Column D"
+        },
+        {
+            "index": 4,
+            "type": "BOOLEAN",
+            "name": "column_e",
+            "comment": "Column E"
+        }
+    ]
+}

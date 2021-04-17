@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>Noleme Flow Connectors: Archive</name>
+
+    <parent>
+        <groupId>com.noleme</groupId>
+        <artifactId>noleme-flow-connect-parent</artifactId>
+        <version>0.1</version>
+    </parent>
+
+    <artifactId>noleme-flow-connect-archive</artifactId>
+    <version>${project.version}</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <compress.version>1.20</compress.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>11</maven.compiler.release>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>${compress.version}</version>
+        </dependency>
+    </dependencies>
+</project>

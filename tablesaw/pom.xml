@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>Noleme Flow Connectors: Tablesaw</name>
+
+    <parent>
+        <groupId>com.noleme</groupId>
+        <artifactId>noleme-flow-connect-parent</artifactId>
+        <version>0.1</version>
+    </parent>
+
+    <artifactId>noleme-flow-connect-tablesaw</artifactId>
+    <version>${project.version}</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <tablesaw.version>0.38.1</tablesaw.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>11</maven.compiler.release>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>tech.tablesaw</groupId>
+            <artifactId>tablesaw-core</artifactId>
+            <version>${tablesaw.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.noleme</groupId>
+            <artifactId>noleme-vault</artifactId>
+            <version>${vault.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.noleme</groupId>
+            <artifactId>noleme-commons</artifactId>
+            <version>${commons.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.noleme</groupId>
+            <artifactId>noleme-json</artifactId>
+            <version>${json.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.15</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.noleme</groupId>
+            <artifactId>noleme-flow-connect-commons</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
