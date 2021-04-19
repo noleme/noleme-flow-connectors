@@ -1,17 +1,10 @@
 package com.noleme.flow.connect.tablesaw.transformer;
 
 import com.noleme.flow.actor.transformer.TransformationException;
-import com.noleme.flow.actor.transformer.Transformer;
 import com.noleme.flow.connect.tablesaw.dataframe.configuration.ColumnProperties;
 import com.noleme.flow.connect.tablesaw.dataframe.configuration.TableProperties;
 import com.noleme.flow.connect.tablesaw.dataframe.configuration.loader.TablePropertiesLoadingException;
-import com.noleme.flow.connect.tablesaw.dataframe.configuration.loader.file.TablePropertiesFileLoader;
-import com.noleme.flow.connect.tablesaw.dataframe.configuration.loader.iostream.TablePropertiesJSONStreamLoader;
-import com.noleme.flow.connect.tablesaw.dataframe.processor.CompositeProcessor;
-import com.noleme.flow.connect.tablesaw.dataframe.processor.TableProcessor;
 import com.noleme.flow.connect.tablesaw.dataframe.processor.TableProcessorException;
-import com.noleme.flow.connect.tablesaw.dataframe.processor.column.AddColumnRowIndexPropertiesProcessor;
-import com.noleme.flow.connect.tablesaw.dataframe.processor.column.RenameColumnPropertiesProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import tech.tablesaw.api.ColumnType;
@@ -30,38 +23,23 @@ import java.util.stream.Collectors;
  * @author Pierre Lecerf (plecerf@lumiomedical.com)
  * Created on 2020/02/27
  */
-public class TablesawCSVParser implements Transformer<InputStream, Table>
+public class TablesawCSVParser extends TablesawParser
 {
-    private final TableProperties properties;
-    private final TableProcessor preprocessor;
-
     private static final Logger logger = LoggerFactory.getLogger(TablesawCSVParser.class);
 
     public TablesawCSVParser()
     {
-        this(new TableProperties());
+        super(new TableProperties());
     }
 
-    /**
-     *
-     * @param properties
-     */
     public TablesawCSVParser(TableProperties properties)
     {
-        this.properties = properties;
-        this.preprocessor = new CompositeProcessor()
-            .addProcessor(new RenameColumnPropertiesProcessor(properties))
-            .addProcessor(new AddColumnRowIndexPropertiesProcessor(properties));
+        super(properties);
     }
 
-    /**
-     *
-     * @param confPath
-     * @throws TablePropertiesLoadingException
-     */
     public TablesawCSVParser(String confPath) throws TablePropertiesLoadingException
     {
-        this(new TablePropertiesFileLoader(new TablePropertiesJSONStreamLoader()).load(confPath));
+        super(confPath);
     }
 
     @Override
@@ -95,7 +73,8 @@ public class TablesawCSVParser implements Transformer<InputStream, Table>
             .separator(this.properties.getSeparator())
             .quoteChar(this.properties.getQuoteChar())
             .header(this.properties.hasHeader())
-            .maxCharsPerColumn(this.properties.getMaxCharsPerColumn());
+            .maxCharsPerColumn(this.properties.getMaxCharsPerColumn())
+        ;
 
         if (this.properties.getSampleSize() >= 0)
             builder.sampleSize(this.properties.getSampleSize());
@@ -103,20 +82,6 @@ public class TablesawCSVParser implements Transformer<InputStream, Table>
             builder.columnTypes(computeColumnTypes(this.properties));
 
         return builder.build();
-    }
-
-    /**
-     *
-     * @param table
-     * @return
-     * @throws TableProcessorException
-     */
-    private Table postBuild(Table table) throws TableProcessorException
-    {
-        if (this.properties.getName() != null)
-            table.setName(this.properties.getName());
-
-        return this.preprocessor.process(table);
     }
 
     /**
@@ -137,7 +102,8 @@ public class TablesawCSVParser implements Transformer<InputStream, Table>
         ArrayList<ColumnType> autocompleted = new ArrayList<>();
 
         int i = 0;
-        for (ColumnProperties cp : declaredTypes) {
+        for (ColumnProperties cp : declaredTypes)
+        {
             for (; i < cp.getSourceIndex(); ++i)
                 autocompleted.add(ColumnType.SKIP);
 

@@ -9,11 +9,10 @@
     <parent>
         <groupId>com.noleme</groupId>
         <artifactId>noleme-flow-connect-parent</artifactId>
-        <version>0.1</version>
+        <version>0.2</version>
     </parent>
 
     <artifactId>noleme-flow-connect-tablesaw</artifactId>
-    <version>${project.version}</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -26,6 +25,18 @@
         <dependency>
             <groupId>tech.tablesaw</groupId>
             <artifactId>tablesaw-core</artifactId>
+            <version>${tablesaw.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>tech.tablesaw</groupId>
+            <artifactId>tablesaw-json</artifactId>
+            <version>${tablesaw.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>tech.tablesaw</groupId>
+            <artifactId>tablesaw-jsplot</artifactId>
             <version>${tablesaw.version}</version>
         </dependency>
 

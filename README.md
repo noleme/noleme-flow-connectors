@@ -94,7 +94,7 @@ Will wrap-up this very simple example by replacing the source by one loading the
 var tableProperties = new TableProperties().setAddRowIndex(false);
 
 var flow = Flow
-    .from(new AmazonS3Streamer(s3, "my-bucket", "my.csv")) // Given a properly configured AmazonS3 instance
+    .from(new AmazonS3Streamer(s3, "my-bucket"), "my.csv") // Given a properly configured AmazonS3 instance
     .pipe(new TablesawCSVParser(tableProperties))
     .pipe(Criterion.whereIsEqualTo("metadata", "interesting"))
     .sink(new TablesawCSVWrite("path/to/my-filtered.csv")) // We still write the output to the filesystem

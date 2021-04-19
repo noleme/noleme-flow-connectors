@@ -9,11 +9,10 @@
     <parent>
         <groupId>com.noleme</groupId>
         <artifactId>noleme-flow-connect-parent</artifactId>
-        <version>0.1</version>
+        <version>0.2</version>
     </parent>
 
     <artifactId>noleme-flow-connect-jsoup</artifactId>
-    <version>${project.version}</version>
     <packaging>jar</packaging>
 
     <properties>
