@@ -1,9 +1,10 @@
-# Lumio ETL
+# Noleme Flow Connectors
 
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/noleme/noleme-flow-connectors/Java%20CI%20with%20Maven)](https://github.com/noleme/noleme-flow-connectors/actions?query=workflow%3A%22Java+CI+with+Maven%22)
 [![Maven Central Repository](https://maven-badges.herokuapp.com/maven-central/com.noleme/noleme-flow-connectors/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.noleme/noleme-flow-connectors)
 [![javadoc](https://javadoc.io/badge2/com.noleme/noleme-flow-connectors/javadoc.svg)](https://javadoc.io/doc/com.noleme/noleme-flow-connectors)
 ![GitHub](https://img.shields.io/github/license/noleme/noleme-flow-connectors)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FNoleme%2Fnoleme-flow-connectors.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FNoleme%2Fnoleme-flow-connectors?ref=badge_shield)
 
 This library provides utilities for building `noleme-flow` based ETLs.
 
@@ -120,4 +121,4 @@ This project will require you to have the following:
 
 
 ## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Flumio-medical%2Flumio-etl.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Flumio-medical%2Flumio-etl?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FNoleme%2Fnoleme-flow-connectors.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FNoleme%2Fnoleme-flow-connectors?ref=badge_large)
