@@ -4,7 +4,7 @@
 [![Maven Central Repository](https://maven-badges.herokuapp.com/maven-central/com.noleme/noleme-flow-connectors/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.noleme/noleme-flow-connectors)
 [![javadoc](https://javadoc.io/badge2/com.noleme/noleme-flow-connectors/javadoc.svg)](https://javadoc.io/doc/com.noleme/noleme-flow-connectors)
 ![GitHub](https://img.shields.io/github/license/noleme/noleme-flow-connectors)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FNoleme%2Fnoleme-flow-connectors.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FNoleme%2Fnoleme-flow-connectors?ref=badge_shield)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fnoleme%2Fnoleme-flow-connectors.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fnoleme%2Fnoleme-flow-connectors?ref=badge_shield)
 
 This library provides utilities for building `noleme-flow` based ETLs.
 
@@ -121,4 +121,4 @@ This project will require you to have the following:
 
 
 ## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FNoleme%2Fnoleme-flow-connectors.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FNoleme%2Fnoleme-flow-connectors?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fnoleme%2Fnoleme-flow-connectors.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fnoleme%2Fnoleme-flow-connectors?ref=badge_large)
