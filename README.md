@@ -53,10 +53,10 @@ Flow.runAsPipeline(flow);
 Running the above should display the following, granted a logger configured for printing `INFO` level information:
 
 ```log
-[main] INFO com.lumiomedical.etl - Initializing stream from filesystem at data/my.csv
-[main] INFO com.lumiomedical.etl - Extracting CSV data into dataframe...
-[main] INFO com.lumiomedical.etl - Extracted 3 lines into dataframe.
-                                               
+[main] INFO com.noleme.flow.connect.commons.transformer.filesystem.FileStreamer - Initializing stream from filesystem at data/my.csv
+[main] INFO com.noleme.flow.connect.tablesaw.transformer.TablesawCSVParser - Extracting CSV data into dataframe...
+[main] INFO com.noleme.flow.connect.tablesaw.transformer.TablesawCSVParser - Extracted 3 lines into dataframe.
+
  index  |  key  |  value  |     metadata      |
 -----------------------------------------------
      0  |    0  |    234  |      interesting  |
