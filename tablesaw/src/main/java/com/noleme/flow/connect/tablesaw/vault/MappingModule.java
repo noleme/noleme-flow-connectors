@@ -3,7 +3,7 @@ package com.noleme.flow.connect.tablesaw.vault;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.noleme.flow.connect.tablesaw.dataframe.configuration.loader.TablePropertiesLoader;
 import com.noleme.flow.connect.tablesaw.dataframe.configuration.loader.json.TablePropertiesNodeLoader;
-import com.noleme.vault.container.definition.Definitions;
+import com.noleme.vault.container.register.Definitions;
 import com.noleme.vault.container.definition.ServiceProvider;
 import com.noleme.vault.parser.module.VaultModule;
 
@@ -37,7 +37,7 @@ public class MappingModule implements VaultModule
                 json
             });
 
-            definitions.setDefinition(serviceIdentifier, def);
+            definitions.services().set(serviceIdentifier, def);
         });
     }
 }

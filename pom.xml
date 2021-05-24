@@ -4,7 +4,7 @@
 
     <groupId>com.noleme</groupId>
     <artifactId>noleme-flow-connect-parent</artifactId>
-    <version>0.2</version>
+    <version>0.3</version>
 
     <name>Noleme Flow Connectors</name>
     <description>Library providing utilities for building noleme-flow based ETLs</description>
@@ -64,7 +64,7 @@
 
     <properties>
         <flow.version>[0.12,)</flow.version>
-        <vault.version>[0.11,)</vault.version>
+        <vault.version>[0.15,)</vault.version>
         <commons.version>[0.17,)</commons.version>
         <json.version>[0.9,)</json.version>
         <slf4j.version>1.7.30</slf4j.version>
