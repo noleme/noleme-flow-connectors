@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.noleme</groupId>
-    <artifactId>sample-nlp</artifactId>
+    <artifactId>sample-wordcount</artifactId>
     <version>0.1</version>
     <packaging>jar</packaging>
 
-    <name>Noleme Flow Connectors Sample: NLP</name>
+    <name>Noleme Flow Connectors Sample: Word-count</name>
     <description>This is a sample project showcasing parts of noleme-flow-connect libraries</description>
 
     <organization>
@@ -30,8 +30,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
         <slf4j.version>1.7.30</slf4j.version>
-        <flow.version>0.13</flow.version>
-        <flow-connect.version>0.1-SNAPSHOT</flow-connect.version>
+        <flow.version>[0.13,)</flow.version>
+        <flow-connect.version>[0.4,)</flow-connect.version>
     </properties>
 
     <dependencies>
@@ -44,24 +44,6 @@
         <dependency>
             <groupId>com.noleme</groupId>
             <artifactId>noleme-flow-connect-commons</artifactId>
-            <version>${flow-connect.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.noleme</groupId>
-            <artifactId>noleme-flow-connect-text</artifactId>
-            <version>${flow-connect.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.noleme</groupId>
-            <artifactId>noleme-flow-connect-etl</artifactId>
-            <version>${flow-connect.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.noleme</groupId>
-            <artifactId>noleme-flow-connect-http</artifactId>
             <version>${flow-connect.version}</version>
         </dependency>
 

@@ -4,7 +4,7 @@
 
     <groupId>com.noleme</groupId>
     <artifactId>noleme-flow-connect-parent</artifactId>
-    <version>0.3</version>
+    <version>0.4</version>
 
     <name>Noleme Flow Connectors</name>
     <description>Library providing utilities for building noleme-flow based ETLs</description>
@@ -124,6 +124,16 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>3.0.0-M4</version>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <tagNameFormat>v{project.version}</tagNameFormat>
+                    <updateVersionsToSnapshot>false</updateVersionsToSnapshot>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

@@ -9,14 +9,13 @@
     <parent>
         <groupId>com.noleme</groupId>
         <artifactId>noleme-flow-connect-parent</artifactId>
-        <version>0.3</version>
+        <version>0.4</version>
     </parent>
 
     <artifactId>noleme-flow-connect-text</artifactId>
     <packaging>jar</packaging>
 
     <properties>
-        <compress.version>1.20</compress.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
     </properties>
