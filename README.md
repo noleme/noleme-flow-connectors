@@ -21,8 +21,7 @@ _TODO_
 
 ## III. Usage
 
-Note that two sample "toy" programs are also provided: `sample-nlp` [here](./sample/nlp) and `sample-crawl` [there](./sample/crawl).
-None of them leverage `noleme-vault` [configuration features](https://github.com/noleme/noleme-vault), but their structure could be simplified and made more resilient to changes with a bit of `noleme-vault` sprinkled in.
+Note that sample "toy" programs are also provided: `sample-wordcount` [here](./sample/wordcount).
 
 We'll also write down a basic example of ETL pipeline leveraging some features found in these libraries, we won't touch on the `ETL` classes, these are covered in the sample project.
 
