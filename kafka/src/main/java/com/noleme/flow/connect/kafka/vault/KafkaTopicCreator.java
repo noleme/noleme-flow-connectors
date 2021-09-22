@@ -5,6 +5,8 @@ import org.apache.kafka.clients.admin.AdminClient;
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.common.errors.TopicExistsException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,6 +20,8 @@ import java.util.stream.Collectors;
  */
 public class KafkaTopicCreator
 {
+    private static final Logger logger = LoggerFactory.getLogger(KafkaTopicCreator.class);
+
     private final KafkaConfig config;
 
     public KafkaTopicCreator(KafkaConfig config)
@@ -33,8 +37,8 @@ public class KafkaTopicCreator
         List<NewTopic> topics = this.config.topics.stream()
             .map(topicConfig -> new NewTopic(
                 topicConfig.name,
-                Optional.empty(),
-                Optional.empty()
+                Optional.of(topicConfig.numPartition),
+                Optional.of(topicConfig.replicationFactor)
             ))
             .collect(Collectors.toList())
         ;
@@ -49,7 +53,10 @@ public class KafkaTopicCreator
         catch (final InterruptedException | ExecutionException e) {
             // Ignore if TopicExistsException, which may be valid if topic exists
             if (e.getCause() instanceof TopicExistsException)
+            {
+                logger.debug("Topic already exists: {}", e.getMessage());
                 return;
+            }
             throw new RuntimeException(e);
         }
     }

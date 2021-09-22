@@ -21,12 +21,12 @@ public class KafkaLoader<K, V> implements Loader<V>
     private final Function<V, K> keyMapper;
     private final boolean autoflush;
 
-    public KafkaLoader(String topic, Producer<K, V> producer, Function<V, K> keyMapper)
+    public KafkaLoader(Producer<K, V> producer, Function<V, K> keyMapper, String topic)
     {
-        this(topic, producer, keyMapper, true);
+        this(producer, keyMapper, true, topic);
     }
 
-    public KafkaLoader(String topic, Producer<K, V> producer, Function<V, K> keyMapper, boolean autoflush)
+    public KafkaLoader(Producer<K, V> producer, Function<V, K> keyMapper, boolean autoflush, String topic)
     {
         this.topic = topic;
         this.producer = producer;

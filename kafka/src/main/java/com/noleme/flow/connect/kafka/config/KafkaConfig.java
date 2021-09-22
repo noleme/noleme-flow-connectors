@@ -20,5 +20,7 @@ public class KafkaConfig
     public static class TopicConfig
     {
         public String name;
+        public int numPartition = 1;
+        public short replicationFactor = 1;
     }
 }

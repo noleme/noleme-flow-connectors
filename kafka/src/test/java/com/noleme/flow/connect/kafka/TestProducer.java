@@ -44,7 +44,7 @@ public class TestProducer
         // Create topic if needed
 
         var props = new Properties();
-        props.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9093");
+        props.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         // Add additional properties.
         props.put(ProducerConfig.ACKS_CONFIG, "all");
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
@@ -59,7 +59,7 @@ public class TestProducer
 
         for (long i = 0L; i < numMessages; i++)
         {
-            String key = "alice";
+            String key = "somekey";
             //DataRecord record = new DataRecord(i);
             String record = "Some message";
 
