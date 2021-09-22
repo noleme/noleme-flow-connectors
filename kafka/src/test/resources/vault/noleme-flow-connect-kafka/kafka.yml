@@ -1,13 +1,14 @@
 kafka:
-  bootstrap_servers: "localhost:9093"
+  bootstrap_servers: "localhost:9092"
   topics:
     - { name: "test" }
+  create_topics: true
   producers:
     acks: "all"
-    key_serializer_class: "org.apache.kafka.common.serialization.StringSerializer"
-    value_serializer_class: "org.apache.kafka.common.serialization.StringSerializer"
+    key.serializer: "org.apache.kafka.common.serialization.StringSerializer"
+    value.serializer: "org.apache.kafka.common.serialization.StringSerializer"
   consumers:
     group_id: "test"
-    auto_offset_reset: "earliest"
-    key_deserializer_class: "org.apache.kafka.common.serialization.StringDeserializer"
-    value_deserializer_class: "org.apache.kafka.common.serialization.StringDeserializer"
+    auto.offset.reset: "earliest"
+    key.deserializer: "org.apache.kafka.common.serialization.StringDeserializer"
+    value.deserializer: "org.apache.kafka.common.serialization.StringDeserializer"

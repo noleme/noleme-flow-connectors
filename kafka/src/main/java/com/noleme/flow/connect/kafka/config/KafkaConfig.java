@@ -1,6 +1,7 @@
 package com.noleme.flow.connect.kafka.config;
 
 import java.util.List;
+import java.util.Properties;
 
 /**
  * @author Pierre LECERF (pierre@noleme.com)
@@ -9,27 +10,15 @@ import java.util.List;
 public class KafkaConfig
 {
     public String bootstrapServers;
+    public boolean provideDefaultProducer = true;
+    public boolean provideDefaultConsumer = true;
+    public boolean createTopics = false;
     public List<TopicConfig> topics;
-    public ProducerConfig producers;
-    public ConsumerConfig consumers;
+    public Properties producers;
+    public Properties consumers;
 
     public static class TopicConfig
     {
         public String name;
-    }
-
-    public static class ProducerConfig
-    {
-        public String acks;
-        public String keySerializerClass;
-        public String valueSerializerClass;
-    }
-
-    public static class ConsumerConfig
-    {
-        public String groupId;
-        public String autoOffsetReset;
-        public String keyDeserializerClass;
-        public String valueDeserializerClass;
     }
 }
