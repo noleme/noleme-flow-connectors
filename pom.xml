@@ -14,11 +14,13 @@
 
     <modules>
         <module>archive</module>
+        <module>avro</module>
         <module>aws</module>
         <module>commons</module>
         <module>etl</module>
         <module>http</module>
         <module>jsoup</module>
+        <module>kafka</module>
         <module>tablesaw</module>
         <module>text</module>
     </modules>
