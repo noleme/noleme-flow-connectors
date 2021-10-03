@@ -16,6 +16,7 @@
         <module>archive</module>
         <!-- <module>avro</module> -->
         <module>aws</module>
+        <module>bitey-dataframe</module>
         <module>commons</module>
         <module>etl</module>
         <module>http</module>
