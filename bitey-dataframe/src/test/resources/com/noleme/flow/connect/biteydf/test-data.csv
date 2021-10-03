@@ -1,0 +1,8 @@
+a,b,c,d,e
+1,2,"abcd",true,false
+2,2,"defg",false,false
+3,1,"hijk",true,true
+4,2,"lmno",false,true
+5,3,"pqrs",true,true
+6,1,"tuvw",false,false
+7,3,"xyz",true,false

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <name>Noleme Flow Connectors: Commons</name>
+    <name>Noleme Flow Connectors: Bitey Dataframe</name>
 
     <parent>
         <groupId>com.noleme</groupId>
@@ -12,25 +12,39 @@
         <version>0.5</version>
     </parent>
 
-    <artifactId>noleme-flow-connect-commons</artifactId>
+    <artifactId>noleme-flow-connect-bitey-dataframe</artifactId>
     <packaging>jar</packaging>
 
     <properties>
+        <bitey-dataframe.version>1.0.0</bitey-dataframe.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
     </properties>
 
     <dependencies>
         <dependency>
+            <groupId>tech.bitey</groupId>
+            <artifactId>dataframe</artifactId>
+            <version>${bitey-dataframe.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.noleme</groupId>
-            <artifactId>noleme-json</artifactId>
-            <version>[0.9,)</version>
+            <artifactId>noleme-vault</artifactId>
+            <version>${vault.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.noleme</groupId>
             <artifactId>noleme-commons</artifactId>
             <version>${commons.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.noleme</groupId>
+            <artifactId>noleme-flow-connect-commons</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

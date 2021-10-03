@@ -1,0 +1,21 @@
+bitey_dataframe:
+  my_dataset:
+    id: my_dataset.properties
+    name: "Test dataset"
+    separator: ","
+    has_header: true
+    column_count: 4
+    charset: "utf-8"
+    columns:
+      - index: 0
+        type: "LONG"
+        name: "column_a"
+      - index: 1
+        type: "LONG"
+        name: "column_b"
+      - index: 2
+        type: "STRING"
+        name: "column_c"
+      - index: 4
+        type: "BOOLEAN"
+        name: "column_d"

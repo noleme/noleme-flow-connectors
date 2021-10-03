@@ -1,0 +1,15 @@
+kafka:
+  bootstrap_servers: "localhost:9093"
+  topics:
+    - { name: "test_in" }
+    - { name: "test_out" }
+  create_topics: true
+  producers:
+    acks: "all"
+    key.serializer: "org.apache.kafka.common.serialization.StringSerializer"
+    value.serializer: "org.apache.kafka.common.serialization.StringSerializer"
+  consumers:
+    group.id: "test"
+    auto.offset.reset: "earliest"
+    key.deserializer: "org.apache.kafka.common.serialization.StringDeserializer"
+    value.deserializer: "org.apache.kafka.common.serialization.StringDeserializer"
