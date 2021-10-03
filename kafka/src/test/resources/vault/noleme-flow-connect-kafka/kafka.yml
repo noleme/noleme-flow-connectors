@@ -1,5 +1,5 @@
 kafka:
-  bootstrap_servers: "localhost:9092"
+  bootstrap_servers: "localhost:9093"
   topics:
     - { name: "test_in" }
     - { name: "test_out" }

@@ -24,7 +24,7 @@ public class KafkaConsumerGenerator<K, V> implements Generator<V>
     private final Duration pollTimeout;
     private final Collection<String> topics;
     private final Queue<ConsumerRecord<K, V>> queue;
-    private boolean isStarted;
+    private boolean isActive;
 
     public KafkaConsumerGenerator(Consumer<K, V> consumer, String... topics)
     {
@@ -42,7 +42,7 @@ public class KafkaConsumerGenerator<K, V> implements Generator<V>
         this.consumer = consumer;
         this.pollTimeout = pollTimeout;
         this.queue = new LinkedList<>();
-        this.isStarted = false;
+        this.isActive = true;
 
         this.consumer.subscribe(topics);
         /*this.consumer.assign(topics.stream()
@@ -54,28 +54,36 @@ public class KafkaConsumerGenerator<K, V> implements Generator<V>
     @Override
     public boolean hasNext()
     {
-        return !this.isStarted || !this.queue.isEmpty();
+        return this.isActive;
     }
 
     @Override
     public V generate() throws GenerationException
     {
-        logger.info("Receiving message from kafka topics: {}", this.topics);
-
         if (!this.queue.isEmpty())
         {
-            logger.info("Polling message from in-memory queue (queue size: {})", this.queue.size());
-            ConsumerRecord<K, V> next = this.queue.poll();
-            return next.value();
+            logger.debug("Polling message from in-memory queue (queue size: {})", this.queue.size());
+            return this.poll();
         }
 
-        this.isStarted = true;
-        while (this.queue.isEmpty())
+        while (this.isActive && this.queue.isEmpty())
         {
             for (ConsumerRecord<K, V> record : this.consumer.poll(this.pollTimeout))
                 this.queue.add(record);
         }
 
-        return this.queue.poll().value();
+        return this.poll();
+    }
+
+    private V poll()
+    {
+        logger.info("Receiving message from kafka topics: {}", this.topics);
+        var record = this.queue.poll();
+        return record != null ? record.value() : null; //This should never be null anyway due to checks in generate()
+    }
+
+    synchronized public void deactivate()
+    {
+        this.isActive = false;
     }
 }
