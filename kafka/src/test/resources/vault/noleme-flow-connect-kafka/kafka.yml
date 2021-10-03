@@ -10,7 +10,6 @@ kafka:
     value.serializer: "org.apache.kafka.common.serialization.StringSerializer"
   consumers:
     group.id: "test"
-    #group.id: "carbon_calculator"
     auto.offset.reset: "earliest"
     key.deserializer: "org.apache.kafka.common.serialization.StringDeserializer"
     value.deserializer: "org.apache.kafka.common.serialization.StringDeserializer"

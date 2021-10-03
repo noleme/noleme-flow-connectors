@@ -1,6 +1,5 @@
 package com.noleme.flow.connect.kafka.generator;
 
-import com.noleme.flow.actor.generator.GenerationException;
 import com.noleme.flow.actor.generator.Generator;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -45,10 +44,6 @@ public class KafkaConsumerGenerator<K, V> implements Generator<V>
         this.isActive = true;
 
         this.consumer.subscribe(topics);
-        /*this.consumer.assign(topics.stream()
-            .map(topic -> new TopicPartition(topic, 1))
-            .collect(Collectors.toList())
-        );*/
     }
 
     @Override
@@ -58,7 +53,7 @@ public class KafkaConsumerGenerator<K, V> implements Generator<V>
     }
 
     @Override
-    public V generate() throws GenerationException
+    public V generate()
     {
         if (!this.queue.isEmpty())
         {

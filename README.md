@@ -17,7 +17,23 @@ _TODO_
 
 ## II. Notes on Structure and Design
 
+This repository is made up of several `noleme-flow-connect` libraries helping with situations ranging from accessing files on AWS all the way to dataframe library integrations, or even kafka consumer/producer features. 
 
+The `noleme-flow-connect` libraries stand at various maturity levels, many are still experimental, some have been used in production, most can be largely improved upon and changes to how their API work or the implementations behind them are to be expected ; although for the more mature ones we do our best to not wreak havoc without due cause.
+
+| Library  | Maturity | Activity | Description |
+| ------------- | ------------- | ------------- | ------------- |
+| `noleme-flow-connect-etl` | Exp. | Medium | Experimental. The most ambitious one, and a bit of an outlier: its goal is to focus on enabling better reusability and composition of Flow fragments |
+| `noleme-flow-connect-archive` | Medium | Low | Transformers for manipulating file archives |
+| `noleme-flow-connect-avro` | Exp. | High | Experimental. Transformers for manipulating Avro data and schemas |
+| `noleme-flow-connect-aws` | Low | Low | Transformers for manipulating files on AWS ; maturity is high enough for it to be functional, but API design needs an overhaul |
+| `noleme-flow-connect-bitey-dataframe` | Exp. | Low | Experimental. Transformers for manipulating Bitey Dataframes, along with a `noleme-vault` module for managing mapping configuration |
+| `noleme-flow-connect-commons` | Medium | Medium | Transformers for all common use-cases such as collection-based `Generator` implementations, filesystem extractors and basic JSON/YML transformers |
+| `noleme-flow-connect-http` | Medium | Low | Transformers for manipulating basic HTTP sources, relies on `java.net.http.HttpClient` |
+| `noleme-flow-connect-jsoup` | Exp. | Low | Experimental. Transformers for extracting data from documents, leveraging the JSoup library |
+| `noleme-flow-connect-kafka` | Exp. | High | Experimental. Transformers for interacting with Kafka both as an input (consumers) and output (producers), along with a `noleme-vault` module for configuration |
+| `noleme-flow-connect-tablesaw` | Medium | Medium | Transformers for manipulating Tablesaw Dataframes, along with a `noleme-vault` module for managing mapping configuration |
+| `noleme-flow-connect-text` | Exp. | Low | Experimental. Transformers for manipulating text and perform (at the moment) very basic tokenization operations |
 
 _TODO_
 

@@ -42,16 +42,11 @@ public class KafkaFlow
             .sink(new KafkaLoader<>(this.producer, v -> "my_key", "test_in"))
         ;
 
-        //producer.flush();
-
         var consume = Flow
             .stream(() -> new KafkaConsumerGenerator<>(this.consumer, "test_in")).setMaxParallelism(6)
             .pipe(msg -> "processed:" + msg)
-            //.driftSink(System.out::println)
             .sink(new KafkaLoader<>(this.producer, v -> "my_key", "test_out"))
         ;
-
-        //Flow.sources(flow).forEach(s -> s.after(setup));
 
         Flow.runAsParallel(8, produce, consume);
     }

@@ -11,7 +11,7 @@ import java.util.Properties;
  * @author Pierre LECERF (pierre@noleme.com)
  * Created on 22/09/2021
  */
-public class TestConsumer
+public class ThrowawayTestConsumer
 {
     public static void main(final String[] args)
     {

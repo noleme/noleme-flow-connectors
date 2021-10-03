@@ -4,7 +4,7 @@
 
     <groupId>com.noleme</groupId>
     <artifactId>noleme-flow-connect-parent</artifactId>
-    <version>0.4</version>
+    <version>0.5</version>
 
     <name>Noleme Flow Connectors</name>
     <description>Library providing utilities for building noleme-flow based ETLs</description>
@@ -14,7 +14,7 @@
 
     <modules>
         <module>archive</module>
-        <module>avro</module>
+        <!-- <module>avro</module> -->
         <module>aws</module>
         <module>commons</module>
         <module>etl</module>

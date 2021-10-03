@@ -17,7 +17,7 @@ import static com.noleme.flow.interruption.InterruptionException.interrupt;
 /**
  * @author Pierre Lecerf (pierre.lecerf@illuin.tech)
  */
-public class PseudoFlowConsumer
+public class ThrowawayPseudoFlowConsumer
 {
     public static void main(String[] args) throws CompilationException, RunException
     {

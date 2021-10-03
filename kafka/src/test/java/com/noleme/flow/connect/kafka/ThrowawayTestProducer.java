@@ -20,7 +20,7 @@ import java.util.concurrent.ExecutionException;
  * @author Pierre LECERF (pierre@noleme.com)
  * Created on 22/09/2021
  */
-public class TestProducer
+public class ThrowawayTestProducer
 {
     public static void createTopic(final String topic, final Properties cloudConfig)
     {

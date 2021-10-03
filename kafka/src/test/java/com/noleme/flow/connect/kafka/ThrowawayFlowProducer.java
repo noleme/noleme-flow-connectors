@@ -12,7 +12,7 @@ import com.noleme.vault.factory.VaultFactory;
  * @author Pierre LECERF (pierre@noleme.com)
  * Created on 22/09/2021
  */
-public class FlowProducer
+public class ThrowawayFlowProducer
 {
     public static void main(String[] args) throws VaultException, CompilationException, RunException
     {
