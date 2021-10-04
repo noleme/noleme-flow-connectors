@@ -25,7 +25,6 @@ The `noleme-flow-connect` libraries stand at various maturity levels, many are s
 | ------------- | ------------- | ------------- | ------------- |
 | `noleme-flow-connect-etl` | Exp. | Medium | Experimental. The most ambitious one, and a bit of an outlier: its goal is to focus on enabling better reusability and composition of Flow fragments |
 | `noleme-flow-connect-archive` | Medium | Low | Transformers for manipulating file archives |
-| `noleme-flow-connect-avro` | Exp. | High | Experimental. Transformers for manipulating Avro data and schemas |
 | `noleme-flow-connect-aws` | Low | Low | Transformers for manipulating files on AWS ; maturity is high enough for it to be functional, but API design needs an overhaul |
 | `noleme-flow-connect-bitey-dataframe` | Exp. | Low | Experimental. Transformers for manipulating Bitey Dataframes, along with a `noleme-vault` module for managing mapping configuration |
 | `noleme-flow-connect-commons` | Medium | Medium | Transformers for all common use-cases such as collection-based `Generator` implementations, filesystem extractors and basic JSON/YML transformers |
