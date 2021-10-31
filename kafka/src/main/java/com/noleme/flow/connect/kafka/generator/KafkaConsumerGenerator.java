@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * @author Pierre Lecerf (pierre.lecerf@illuin.tech)
+ * @author Pierre Lecerf (pierre@noleme.com)
  */
 public class KafkaConsumerGenerator<K, V> implements Generator<V>
 {

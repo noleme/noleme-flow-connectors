@@ -9,7 +9,7 @@
     <parent>
         <groupId>com.noleme</groupId>
         <artifactId>noleme-flow-connect-parent</artifactId>
-        <version>0.5</version>
+        <version>0.6</version>
     </parent>
 
     <artifactId>noleme-flow-connect-text</artifactId>
