@@ -1,10 +1,13 @@
 package com.noleme.flow.connect.commons.transformer.json;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectWriter;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.noleme.flow.actor.transformer.TransformationException;
 import com.noleme.flow.actor.transformer.Transformer;
 import com.noleme.json.Json;
-import com.noleme.json.JsonException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Pierre Lecerf (plecerf@lumiomedical.com)
@@ -13,6 +16,8 @@ import com.noleme.json.JsonException;
 public class ObjectToJsonString<T> implements Transformer<T, String>
 {
     private final boolean prettyPrint;
+
+    private static final Logger logger = LoggerFactory.getLogger(ObjectToJsonString.class);
 
     public ObjectToJsonString()
     {
@@ -32,14 +37,16 @@ public class ObjectToJsonString<T> implements Transformer<T, String>
     public String transform(T input) throws TransformationException
     {
         try {
-            JsonNode node = Json.toJson(input);
+            logger.info("Serializing input into JSON.");
 
-            return this.prettyPrint
-                ? Json.prettyPrint(node)
-                : Json.stringify(node)
-            ;
+            ObjectWriter writer = Json.mapper().writer();
+
+            if (this.prettyPrint)
+                writer = writer.with(SerializationFeature.INDENT_OUTPUT);
+
+            return writer.writeValueAsString(input);
         }
-        catch (JsonException e) {
+        catch (JsonProcessingException e) {
             throw new TransformationException(e.getMessage(), e);
         }
     }

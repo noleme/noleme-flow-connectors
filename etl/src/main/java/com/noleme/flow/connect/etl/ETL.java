@@ -20,6 +20,7 @@ import java.util.Collection;
  * @author Pierre Lecerf (plecerf@lumiomedical.com)
  * Created on 2020/03/09
  */
+@Deprecated
 public abstract class ETL
 {
     private FlowRuntime runtime;
