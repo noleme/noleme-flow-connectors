@@ -21,6 +21,7 @@ public class HttpStreamer implements Transformer<HttpRequest, HttpResponse<Input
     private final Supplier<HttpClient> supplier;
 
     private static final Logger logger = LoggerFactory.getLogger(HttpStreamer.class);
+    public static final Supplier<HttpClient> defaultSupplier = HttpStreamer::defaultClientSupply;
 
     /**
      *
@@ -36,7 +37,7 @@ public class HttpStreamer implements Transformer<HttpRequest, HttpResponse<Input
      */
     public HttpStreamer()
     {
-        this(() -> HttpClient.newBuilder().followRedirects(HttpClient.Redirect.ALWAYS).build());
+        this(HttpStreamer.defaultSupplier);
     }
 
     @Override
@@ -51,5 +52,13 @@ public class HttpStreamer implements Transformer<HttpRequest, HttpResponse<Input
         catch (InterruptedException | IOException e) {
             throw new TransformationException("An error occurred while attempting to send the request.", e);
         }
+    }
+
+    private static HttpClient defaultClientSupply()
+    {
+        return HttpClient.newBuilder()
+            .followRedirects(HttpClient.Redirect.ALWAYS)
+            .build()
+        ;
     }
 }

@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  * @author Pierre Lecerf (plecerf@lumiomedical.com)
  * Created on 2020/12/07
  */
-public class BatchReaderGenerator implements Generator<InputStream>
+public class BatchReaderGenerator implements Generator<List<String>>
 {
     private final BufferedReader reader;
     private final int batchSize;
@@ -45,7 +45,7 @@ public class BatchReaderGenerator implements Generator<InputStream>
     }
 
     @Override
-    public InputStream generate()
+    public List<String> generate()
     {
         List<String> lines = this.reader.lines()
             .limit(this.batchSize)
@@ -54,6 +54,6 @@ public class BatchReaderGenerator implements Generator<InputStream>
 
         this.hasNext = lines.size() == this.batchSize;
 
-        return new ByteArrayInputStream(String.join("\n", lines).getBytes());
+        return lines;
     }
 }
