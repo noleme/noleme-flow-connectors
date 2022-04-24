@@ -9,14 +9,14 @@
     <parent>
         <groupId>com.noleme</groupId>
         <artifactId>noleme-flow-connect-parent</artifactId>
-        <version>0.7</version>
+        <version>0.7.1</version>
     </parent>
 
     <artifactId>noleme-flow-connect-aws</artifactId>
     <packaging>jar</packaging>
 
     <properties>
-        <aws.version>1.11.999</aws.version>
+        <aws.version>1.12.205</aws.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
     </properties>
