@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import static com.noleme.flow.interruption.InterruptionException.interrupt;
+
 /**
  * @author Pierre Lecerf (plecerf@noleme.com)
  * Created on 2020/12/17
@@ -17,31 +19,35 @@ import java.io.InputStreamReader;
 public class ReaderGenerator implements Generator<String>
 {
     private final BufferedReader reader;
+    private boolean hasNext;
 
     private static final Logger logger = LoggerFactory.getLogger(ReaderGenerator.class);
 
     public ReaderGenerator(InputStream stream)
     {
         this.reader = new BufferedReader(new InputStreamReader(stream));
+        this.hasNext = true;
     }
 
     @Override
     public boolean hasNext()
     {
-        try {
-            return this.reader.ready();
-        }
-        catch (IOException e) {
-            logger.error("An error occurred while attempting to determine the stream readiness: "+e.getMessage(), e);
-            return false;
-        }
+        return this.hasNext;
     }
 
     @Override
     public String generate() throws GenerationException
     {
         try {
-            return this.reader.readLine();
+            String line = this.reader.readLine();
+
+            if (line == null)
+            {
+                this.hasNext = false;
+                throw interrupt();
+            }
+
+            return line;
         }
         catch (IOException e) {
             logger.error("An error occurred while attempting to read a line from the stream: "+e.getMessage(), e);

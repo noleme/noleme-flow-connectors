@@ -1,10 +1,10 @@
 package com.noleme.flow.connect.commons.generator;
 
 import com.noleme.flow.actor.generator.Generator;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,8 +17,6 @@ public class BatchReaderGenerator implements Generator<List<String>>
     private final BufferedReader reader;
     private final int batchSize;
     private boolean hasNext;
-
-    private static final Logger logger = LoggerFactory.getLogger(BatchReaderGenerator.class);
 
     /**
      *
@@ -35,13 +33,7 @@ public class BatchReaderGenerator implements Generator<List<String>>
     @Override
     public boolean hasNext()
     {
-        try {
-            return this.reader.ready() && this.hasNext;
-        }
-        catch (IOException e) {
-            logger.error("An error occurred while attempting to determine the stream readiness: "+e.getMessage(), e);
-            return false;
-        }
+        return this.hasNext;
     }
 
     @Override
