@@ -18,8 +18,6 @@
     <properties>
         <aws.version>1.12.239</aws.version>
         <localstack.version>1.17.2</localstack.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>11</maven.compiler.release>
     </properties>
 
     <dependencies>

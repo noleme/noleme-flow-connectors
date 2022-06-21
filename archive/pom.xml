@@ -17,8 +17,6 @@
 
     <properties>
         <compress.version>1.21</compress.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>11</maven.compiler.release>
     </properties>
 
     <dependencies>
