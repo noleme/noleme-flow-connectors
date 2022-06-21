@@ -15,22 +15,17 @@
     <artifactId>noleme-flow-connect-commons</artifactId>
     <packaging>jar</packaging>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>11</maven.compiler.release>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.noleme</groupId>
             <artifactId>noleme-json</artifactId>
-            <version>[0.9,)</version>
+            <version>${noleme-json.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.noleme</groupId>
             <artifactId>noleme-commons</artifactId>
-            <version>${commons.version}</version>
+            <version>${noleme-commons.version}</version>
         </dependency>
     </dependencies>
 </project>

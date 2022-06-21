@@ -17,8 +17,6 @@
 
     <properties>
         <tablesaw.version>0.38.1</tablesaw.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>11</maven.compiler.release>
     </properties>
 
     <dependencies>
@@ -43,19 +41,19 @@
         <dependency>
             <groupId>com.noleme</groupId>
             <artifactId>noleme-vault</artifactId>
-            <version>${vault.version}</version>
+            <version>${noleme-vault.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.noleme</groupId>
             <artifactId>noleme-commons</artifactId>
-            <version>${commons.version}</version>
+            <version>${noleme-commons.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.noleme</groupId>
             <artifactId>noleme-json</artifactId>
-            <version>${json.version}</version>
+            <version>${noleme-json.version}</version>
         </dependency>
 
         <dependency>

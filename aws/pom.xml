@@ -16,9 +16,8 @@
     <packaging>jar</packaging>
 
     <properties>
-        <aws.version>1.11.999</aws.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>11</maven.compiler.release>
+        <aws.version>1.12.239</aws.version>
+        <localstack.version>1.17.2</localstack.version>
     </properties>
 
     <dependencies>
@@ -31,7 +30,21 @@
         <dependency>
             <groupId>com.noleme</groupId>
             <artifactId>noleme-commons</artifactId>
-            <version>${commons.version}</version>
+            <version>${noleme-commons.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.noleme</groupId>
+            <artifactId>noleme-flow-connect-commons</artifactId>
+            <version>${version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>localstack</artifactId>
+            <version>${localstack.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

@@ -4,6 +4,7 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
@@ -47,6 +48,16 @@ public final class S3
     {
         var builder = AmazonS3ClientBuilder.standard();
 
+        if (properties.containsKey("endpoint") && properties.containsKey("region"))
+        {
+            builder.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(
+                properties.getProperty("endpoint"),
+                properties.getProperty("region")
+            ));
+        }
+        else if (properties.containsKey("region"))
+            builder.withRegion(Regions.fromName(properties.getProperty("region")));
+
         if (properties.containsKey("access_key"))
         {
             AWSCredentials credentials = new BasicAWSCredentials(
@@ -62,7 +73,6 @@ public final class S3
         config.withMaxConnections(1024);
 
         return builder
-            .withRegion(Regions.fromName(properties.getProperty("region")))
             .withClientConfiguration(config)
             .build()
         ;

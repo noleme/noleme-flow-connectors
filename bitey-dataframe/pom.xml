@@ -31,13 +31,13 @@
         <dependency>
             <groupId>com.noleme</groupId>
             <artifactId>noleme-vault</artifactId>
-            <version>${vault.version}</version>
+            <version>${noleme-vault.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.noleme</groupId>
             <artifactId>noleme-commons</artifactId>
-            <version>${commons.version}</version>
+            <version>${noleme-commons.version}</version>
         </dependency>
 
         <dependency>
