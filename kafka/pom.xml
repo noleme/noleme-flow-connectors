@@ -67,7 +67,7 @@
         <dependency>
             <groupId>com.noleme</groupId>
             <artifactId>noleme-vault</artifactId>
-            <version>${vault.version}</version>
+            <version>${noleme-vault.version}</version>
         </dependency>
 
         <dependency>
