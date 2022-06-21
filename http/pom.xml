@@ -22,9 +22,4 @@
 
     <artifactId>noleme-flow-connect-http</artifactId>
     <packaging>jar</packaging>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>11</maven.compiler.release>
-    </properties>
 </project>
