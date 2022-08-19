@@ -1,6 +1,6 @@
 # Noleme Flow Connectors
 
-[![Maven Build](https://github.com/noleme/noleme-flow-connectors/actions/workflows/maven.yml/badge.svg?branch=master)](https://github.com/noleme/noleme-flow-connectors/actions/workflows/maven.yml)
+[![Maven Build](https://github.com/noleme/noleme-flow-connectors/actions/workflows/maven-build.yml/badge.svg?branch=master)](https://github.com/noleme/noleme-flow-connectors/actions/workflows/maven.yml)
 [![Maven Central Repository](https://maven-badges.herokuapp.com/maven-central/com.noleme/noleme-flow-connect-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.noleme/noleme-flow-connect-parent)
 ![GitHub](https://img.shields.io/github/license/noleme/noleme-flow-connectors)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fnoleme%2Fnoleme-flow-connectors.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fnoleme%2Fnoleme-flow-connectors?ref=badge_shield)
