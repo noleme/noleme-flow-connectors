@@ -72,7 +72,7 @@
         <noleme-vault.version>0.17.2</noleme-vault.version>
         <noleme-commons.version>0.17.1</noleme-commons.version>
         <noleme-json.version>0.9.3</noleme-json.version>
-        <slf4j.version>1.7.36</slf4j.version>
+        <slf4j.version>2.0.4</slf4j.version>
         <junit.version>5.8.2</junit.version>
         <maven-surefire.version>3.0.0-M7</maven-surefire.version>
         <maven-source.version>3.2.1</maven-source.version>
