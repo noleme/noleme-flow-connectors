@@ -30,8 +30,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
         <slf4j.version>1.7.30</slf4j.version>
-        <flow.version>[0.13,)</flow.version>
-        <flow-connect.version>[0.4,)</flow-connect.version>
+        <flow.version>0.17</flow.version>
+        <flow-connect.version>0.8</flow-connect.version>
     </properties>
 
     <dependencies>
