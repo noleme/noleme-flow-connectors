@@ -16,7 +16,7 @@
     <packaging>jar</packaging>
 
     <properties>
-        <aws.version>1.12.285</aws.version>
+        <aws.version>1.12.346</aws.version>
         <localstack.version>1.17.5</localstack.version>
     </properties>
 
