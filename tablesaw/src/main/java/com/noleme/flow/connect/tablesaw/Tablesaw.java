@@ -125,22 +125,22 @@ public final class Tablesaw
             return t -> t.where(table -> table.stringColumn(column).isEqualTo(value));
         }
 
-        public static Transformer<Table, Table> whereIsEqualTo(String column, Long value)
+        public static Transformer<Table, Table> whereIsEqualTo(String column, long value)
         {
             return t -> t.where(table -> table.longColumn(column).isEqualTo(value));
         }
 
-        public static Transformer<Table, Table> whereIsEqualTo(String column, Integer value)
+        public static Transformer<Table, Table> whereIsEqualTo(String column, int value)
         {
             return t -> t.where(table -> table.intColumn(column).isEqualTo(value));
         }
 
-        public static Transformer<Table, Table> whereIsEqualTo(String column, Float value)
+        public static Transformer<Table, Table> whereIsEqualTo(String column, float value)
         {
             return t -> t.where(table -> table.floatColumn(column).isEqualTo(value));
         }
 
-        public static Transformer<Table, Table> whereIsEqualTo(String column, Double value)
+        public static Transformer<Table, Table> whereIsEqualTo(String column, double value)
         {
             return t -> t.where(table -> table.doubleColumn(column).isEqualTo(value));
         }
@@ -167,22 +167,22 @@ public final class Tablesaw
             return t -> t.where(table -> table.stringColumn(column).isIn(values));
         }
 
-        public static Transformer<Table, Table> whereIsIn(String column, Long... values)
+        public static Transformer<Table, Table> whereIsIn(String column, long... values)
         {
             return t -> t.where(table -> table.longColumn(column).isIn(values));
         }
 
-        public static Transformer<Table, Table> whereIsIn(String column, Integer... values)
+        public static Transformer<Table, Table> whereIsIn(String column, int... values)
         {
             return t -> t.where(table -> table.intColumn(column).isIn(values));
         }
 
-        public static Transformer<Table, Table> whereIsIn(String column, Float... values)
+        public static Transformer<Table, Table> whereIsIn(String column, float... values)
         {
             return t -> t.where(table -> table.floatColumn(column).isIn(values));
         }
 
-        public static Transformer<Table, Table> whereIsIn(String column, Double... values)
+        public static Transformer<Table, Table> whereIsIn(String column, double... values)
         {
             return t -> t.where(table -> table.doubleColumn(column).isIn(values));
         }

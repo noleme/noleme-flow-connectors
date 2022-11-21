@@ -1,8 +1,6 @@
 package com.noleme.flow.connect.commons.generator;
 
-import com.noleme.flow.actor.extractor.ExtractionException;
 import com.noleme.flow.actor.extractor.Extractor;
-import com.noleme.flow.actor.generator.GenerationException;
 import com.noleme.flow.actor.generator.Generator;
 
 import java.util.function.Function;
@@ -34,14 +32,9 @@ public class ExtractorGenerator <I, O> implements Generator<O>
     }
 
     @Override
-    public O generate() throws GenerationException
+    public O generate() throws Exception
     {
-        try {
-            I next = this.engine.generate();
-            return this.extractorFunction.apply(next).extract();
-        }
-        catch (ExtractionException e) {
-            throw new GenerationException(e.getMessage(), e);
-        }
+        I next = this.engine.generate();
+        return this.extractorFunction.apply(next).extract();
     }
 }

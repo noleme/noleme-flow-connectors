@@ -14,7 +14,7 @@ import java.util.function.Function;
  * @author Pierre Lecerf (plecerf@lumiomedical.com)
  * Created on 2020/12/22
  */
-public class CreateDirectory <I> implements Transformer<I, I>
+public class CreateDirectory<I> implements Transformer<I, I>
 {
     private final Function<I, Path> pathCreator;
 

@@ -15,10 +15,9 @@ public final class HttpTransformers
 
     /**
      *
-     * @param url
-     * @return
-     * @throws TransformationException
+     * @deprecated From noleme-flow 0.18 and up simply use URL::new instead
      */
+    @Deprecated
     public static URL asURL(String url) throws TransformationException
     {
         try {

@@ -9,14 +9,14 @@
     <parent>
         <groupId>com.noleme</groupId>
         <artifactId>noleme-flow-connect-parent</artifactId>
-        <version>0.7.1</version>
+        <version>0.8</version>
     </parent>
 
     <artifactId>noleme-flow-connect-tablesaw</artifactId>
     <packaging>jar</packaging>
 
     <properties>
-        <tablesaw.version>0.38.1</tablesaw.version>
+        <tablesaw.version>0.43.1</tablesaw.version>
     </properties>
 
     <dependencies>

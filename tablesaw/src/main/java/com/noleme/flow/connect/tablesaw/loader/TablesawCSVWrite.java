@@ -5,8 +5,7 @@ import com.noleme.flow.actor.loader.LoadingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import tech.tablesaw.api.Table;
-
-import java.io.IOException;
+import tech.tablesaw.io.RuntimeIOException;
 
 /**
  * @author Pierre Lecerf (plecerf@lumiomedical.com)
@@ -34,7 +33,7 @@ public class TablesawCSVWrite implements Loader<Table>
             logger.info("Loading dataframe as CSV into {}", this.path);
             table.write().toFile(this.path);
         }
-        catch (IOException e) {
+        catch (RuntimeIOException e) {
             throw new LoadingException("An unexpected error occurred while attempting to write table at " + this.path, e);
         }
     }

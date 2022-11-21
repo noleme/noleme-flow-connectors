@@ -1,6 +1,5 @@
 package com.noleme.flow.connect.tablesaw.transformer;
 
-import com.noleme.flow.actor.transformer.TransformationException;
 import com.noleme.flow.actor.transformer.Transformer;
 import tech.tablesaw.api.Table;
 
@@ -37,7 +36,7 @@ public class TablesawCache implements Transformer<InputStream, Table>
     }
 
     @Override
-    public Table transform(InputStream input) throws TransformationException
+    public Table transform(InputStream input) throws Exception
     {
         if (this.cache == null)
             this.cache = this.transformer.transform(input);

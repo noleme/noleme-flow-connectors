@@ -57,7 +57,7 @@ public class TablesawCSVParser extends TablesawParser
 
             return table;
         }
-        catch (IOException | IndexOutOfBoundsException | TableProcessorException e) {
+        catch (IndexOutOfBoundsException | TableProcessorException e) {
             throw new TransformationException(e.getMessage(), e);
         }
     }

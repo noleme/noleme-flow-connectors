@@ -1,6 +1,5 @@
 package com.noleme.flow.connect.commons.transformer.filesystem;
 
-import com.noleme.flow.actor.transformer.TransformationException;
 import com.noleme.flow.actor.transformer.Transformer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,15 +11,16 @@ import java.nio.file.Paths;
 import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author Pierre Lecerf (pierre@noleme.com)
  */
 public class DirectoryScanner implements Transformer<String, Set<String>>
 {
-    private static final Logger logger = LoggerFactory.getLogger(DirectoryScanner.class);
-
     private final Predicate<Path> filter;
+
+    private static final Logger logger = LoggerFactory.getLogger(DirectoryScanner.class);
 
     public DirectoryScanner()
     {
@@ -33,11 +33,11 @@ public class DirectoryScanner implements Transformer<String, Set<String>>
     }
 
     @Override
-    public Set<String> transform(String directory) throws TransformationException
+    public Set<String> transform(String directory) throws IOException
     {
-        try {
-            Set<String> paths = Files
-                .list(Paths.get(directory))
+        try (Stream<Path> files = Files.list(Paths.get(directory)))
+        {
+            Set<String> paths = files
                 .filter(f -> !Files.isDirectory(f))
                 .filter(this.filter)
                 .map(Path::toString)
@@ -47,9 +47,6 @@ public class DirectoryScanner implements Transformer<String, Set<String>>
             logger.info("Scanning files in directory {} returned {} file(s)", directory, paths.size());
 
             return paths;
-        }
-        catch (IOException e) {
-            throw new TransformationException(e.getMessage(), e);
         }
     }
 }

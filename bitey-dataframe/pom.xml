@@ -9,14 +9,14 @@
     <parent>
         <groupId>com.noleme</groupId>
         <artifactId>noleme-flow-connect-parent</artifactId>
-        <version>0.7.1</version>
+        <version>0.8</version>
     </parent>
 
     <artifactId>noleme-flow-connect-bitey-dataframe</artifactId>
     <packaging>jar</packaging>
 
     <properties>
-        <bitey-dataframe.version>1.1.2</bitey-dataframe.version>
+        <bitey-dataframe.version>1.1.7</bitey-dataframe.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
     </properties>

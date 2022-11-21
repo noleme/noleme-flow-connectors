@@ -9,6 +9,7 @@ import com.noleme.json.JsonException;
  * @author Pierre Lecerf (plecerf@lumiomedical.com)
  * Created on 2020/12/26
  */
+@Deprecated
 public final class JsonTransformers
 {
     private JsonTransformers() {}

@@ -9,10 +9,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import tech.tablesaw.api.ColumnType;
 import tech.tablesaw.api.Table;
+import tech.tablesaw.io.RuntimeIOException;
 import tech.tablesaw.io.Source;
 import tech.tablesaw.io.json.JsonReadOptions;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Comparator;
 import java.util.List;
@@ -57,7 +57,7 @@ public class TablesawJSONParser extends TablesawParser
 
             return table;
         }
-        catch (IOException | IndexOutOfBoundsException | TableProcessorException e) {
+        catch (RuntimeIOException | IndexOutOfBoundsException | TableProcessorException e) {
             throw new TransformationException(e.getMessage(), e);
         }
     }
