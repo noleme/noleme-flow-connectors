@@ -16,6 +16,7 @@ import tech.tablesaw.io.json.JsonReadOptions;
 import java.io.InputStream;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 /**
@@ -24,21 +25,36 @@ import java.util.stream.Collectors;
  */
 public class TablesawJSONParser extends TablesawParser
 {
+    private final Consumer<JsonReadOptions.Builder> adjuster;
+
+    private static final Consumer<JsonReadOptions.Builder> defaultAdjuster = builder -> {};
     private static final Logger logger = LoggerFactory.getLogger(TablesawJSONParser.class);
 
     public TablesawJSONParser()
     {
-        super(new TableProperties());
+        this(new TableProperties());
     }
 
     public TablesawJSONParser(TableProperties properties)
     {
+        this(properties, defaultAdjuster);
+    }
+
+    public TablesawJSONParser(TableProperties properties, Consumer<JsonReadOptions.Builder> adjuster)
+    {
         super(properties);
+        this.adjuster = adjuster;
     }
 
     public TablesawJSONParser(String confPath) throws TablePropertiesLoadingException
     {
+        this(confPath, defaultAdjuster);
+    }
+
+    public TablesawJSONParser(String confPath, Consumer<JsonReadOptions.Builder> adjuster) throws TablePropertiesLoadingException
+    {
         super(confPath);
+        this.adjuster = adjuster;
     }
 
     @Override
@@ -78,6 +94,8 @@ public class TablesawJSONParser extends TablesawParser
             logger.warn("A TableProperties sample_size was specified but tablesaw-json cannot handle it");
         if (!this.properties.getMapping().isEmpty())
             logger.warn("A TableProperties mapping was specified but tablesaw-json cannot handle it, column mapping will be emulated afterwards");
+
+        this.adjuster.accept(builder);
 
         return builder.build();
     }
