@@ -12,11 +12,11 @@ import tech.tablesaw.api.Table;
 import tech.tablesaw.io.Source;
 import tech.tablesaw.io.csv.CsvReadOptions;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 /**
@@ -25,21 +25,36 @@ import java.util.stream.Collectors;
  */
 public class TablesawCSVParser extends TablesawParser
 {
+    private final Consumer<CsvReadOptions.Builder> adjuster;
+
+    private static final Consumer<CsvReadOptions.Builder> defaultAdjuster = builder -> {};
     private static final Logger logger = LoggerFactory.getLogger(TablesawCSVParser.class);
 
     public TablesawCSVParser()
     {
-        super(new TableProperties());
+        this(new TableProperties());
     }
 
     public TablesawCSVParser(TableProperties properties)
     {
+        this(properties, defaultAdjuster);
+    }
+
+    public TablesawCSVParser(TableProperties properties, Consumer<CsvReadOptions.Builder> adjuster)
+    {
         super(properties);
+        this.adjuster = adjuster;
     }
 
     public TablesawCSVParser(String confPath) throws TablePropertiesLoadingException
     {
+        this(confPath, defaultAdjuster);
+    }
+
+    public TablesawCSVParser(String confPath, Consumer<CsvReadOptions.Builder> adjuster) throws TablePropertiesLoadingException
+    {
         super(confPath);
+        this.adjuster = adjuster;
     }
 
     @Override
@@ -80,6 +95,8 @@ public class TablesawCSVParser extends TablesawParser
             builder.sampleSize(this.properties.getSampleSize());
         if (!this.properties.getMapping().isEmpty())
             builder.columnTypes(computeColumnTypes(this.properties));
+
+        this.adjuster.accept(builder);
 
         return builder.build();
     }
