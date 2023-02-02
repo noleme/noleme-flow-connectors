@@ -9,7 +9,7 @@
     <parent>
         <groupId>com.noleme</groupId>
         <artifactId>noleme-flow-connect-parent</artifactId>
-        <version>0.8.1</version>
+        <version>0.8.2</version>
     </parent>
 
     <artifactId>noleme-flow-connect-tablesaw</artifactId>
@@ -32,10 +32,25 @@
             <version>${tablesaw.version}</version>
         </dependency>
 
+        <!-- In order to circumvent CVE-2022-42889 (9.8) -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>1.10.0</version>
+        </dependency>
+
         <dependency>
             <groupId>tech.tablesaw</groupId>
             <artifactId>tablesaw-jsplot</artifactId>
             <version>${tablesaw.version}</version>
+        </dependency>
+
+        <!-- In order to circumvent CVE-2019-19899 (9.8) -->
+        <!-- In order to circumvent CVE-2022-37767 (9.8) -->
+        <dependency>
+            <groupId>io.pebbletemplates</groupId>
+            <artifactId>pebble</artifactId>
+            <version>3.1.6</version>
         </dependency>
 
         <dependency>
