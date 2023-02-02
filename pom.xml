@@ -73,7 +73,7 @@
         <noleme-commons.version>0.17.1</noleme-commons.version>
         <noleme-json.version>0.9.5</noleme-json.version>
         <slf4j.version>1.7.36</slf4j.version>
-        <junit.version>5.9.1</junit.version>
+        <junit.version>5.9.2</junit.version>
         <maven-surefire.version>3.0.0-M7</maven-surefire.version>
         <maven-source.version>3.2.1</maven-source.version>
         <maven-release.version>3.0.0-M7</maven-release.version>
