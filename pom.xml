@@ -71,7 +71,7 @@
         <noleme-flow.version>0.18</noleme-flow.version>
         <noleme-vault.version>0.18.2</noleme-vault.version>
         <noleme-commons.version>0.17.1</noleme-commons.version>
-        <noleme-json.version>0.9.5</noleme-json.version>
+        <noleme-json.version>0.10</noleme-json.version>
         <slf4j.version>1.7.36</slf4j.version>
         <junit.version>5.10.0</junit.version>
         <maven-surefire.version>3.0.0-M7</maven-surefire.version>
