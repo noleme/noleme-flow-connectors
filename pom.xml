@@ -4,7 +4,7 @@
 
     <groupId>com.noleme</groupId>
     <artifactId>noleme-flow-connect-parent</artifactId>
-    <version>0.8.2</version>
+    <version>0.8.3</version>
 
     <name>Noleme Flow Connectors</name>
     <description>Library providing utilities for building noleme-flow based ETLs</description>
