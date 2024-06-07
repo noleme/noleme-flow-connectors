@@ -16,7 +16,7 @@
     <packaging>jar</packaging>
 
     <properties>
-        <compress.version>1.24.0</compress.version>
+        <compress.version>1.26.2</compress.version>
     </properties>
 
     <dependencies>
