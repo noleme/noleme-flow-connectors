@@ -69,7 +69,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
         <noleme-flow.version>0.18</noleme-flow.version>
-        <noleme-vault.version>0.18.2</noleme-vault.version>
+        <noleme-vault.version>0.19</noleme-vault.version>
         <noleme-commons.version>0.17.1</noleme-commons.version>
         <noleme-json.version>0.10</noleme-json.version>
         <slf4j.version>1.7.36</slf4j.version>
