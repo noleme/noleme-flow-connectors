@@ -17,7 +17,7 @@
 
     <properties>
         <aws.version>1.12.753</aws.version>
-        <localstack.version>1.17.6</localstack.version>
+        <localstack.version>1.20.1</localstack.version>
     </properties>
 
     <dependencies>
